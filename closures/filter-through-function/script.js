@@ -1,18 +1,17 @@
 'use strict';
 
 function inBetween(a, b) {
-    return function() {
-        for( let i of arr) {
-            ( i >= a && i <= b ) ? true : false;
-        }
+    return (value) => {
+       return ( value >= a && value <= b );
     }
 }
 
 function inArray(arr) {
-    return function() {
-        for( let k of newArr) {
-            ( arr.indexOf(k) != -1 ) ? true : false;
+    return (value) => {
+        for( let i of arr ) {
+            return arr.includes(value);
         }
+    
     }
 }
 
