@@ -1,2 +1,5 @@
 README.md
 package-lock.json
+/node_modules
+package.json
+.eslintrc.json
