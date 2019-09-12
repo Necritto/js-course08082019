@@ -2,12 +2,15 @@
 
 function makeArmy() {
     let shooters = [];
+    let i = 0;
 
-    for (let i = 0; i < 10; i++) {
+    while (i < 10) {
+        let k = i;
         let shooter = function () {
-            alert(i);
+            alert(k);
         };
         shooters.push(shooter);
+        i++;
     }
 
     return shooters;
