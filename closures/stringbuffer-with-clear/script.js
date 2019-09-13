@@ -3,11 +3,7 @@
 function makeBuffer() {
     let currentResult = '';
 
-    return function buffer(value) {
-        if ( value === undefined ) {
-            value = '';
-            return currentResult += value;
-        }
+    return function buffer(value = '') {
         buffer.clear = () => {
             return currentResult = '';
         }
