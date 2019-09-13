@@ -2,17 +2,13 @@
 
 function makeBuffer() {
     let currentResult = '';
-    let arr = [];
-
-    function setBuffer() {
-        while (arguments > 0) {
-            arr.push(currentResult);
-        };
-        return arr.split('');
-    }
-
-    return () => {
-        return (arguments.length ? setBuffer() : currentResult);
+    
+    return function buffer(value) {
+        if ( value === undefined ) {
+            value = '';
+            return currentResult += value;
+        }
+        return currentResult += value;
     }
 }
 
