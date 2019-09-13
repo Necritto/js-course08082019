@@ -4,7 +4,10 @@ function makeBuffer() {
     let currentResult = '';
     
     return function buffer(value = '') {
-        return currentResult += value;
+        if(!value) {
+            return currentResult += value;
+        }
+        currentResult += value;
     }
 }
 

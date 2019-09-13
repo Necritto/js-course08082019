@@ -7,7 +7,10 @@ function makeBuffer() {
         buffer.clear = () => {
             return currentResult = '';
         }
-        return currentResult += value;
+        if(!value) {
+            return currentResult += value;
+        }
+        currentResult += value;
     }
 }
 
