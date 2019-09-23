@@ -1,26 +1,17 @@
 'use strict';
 
-function printNumbers(from, to) {
   // setInterval implementation
 
+function printNumbers(from, to) {
+
+  let currentFrom = from;
   let interval = setInterval(() => {
-    console.log(`setInterval: ${Math.random() * 2}`);
-  }, from);
-  
-  setTimeout(() => {
-    clearInterval(interval);
-  }, to);
-
-  // setTimeout implementation
-  
-  let timeout = setTimeout(function tick() {
-    console.log(`setTimeout: ${Math.random() * 1}`);
-    timeout = setTimeout(tick, from);
-  }, from);
-
-  setTimeout(() => {
-    clearTimeout(timeout);
-  }, to);
+    console.log(currentFrom);
+    if (currentFrom === to) {
+      clearInterval(interval);
+    }
+    currentFrom++;
+  }, 1000);
 }
 
-printNumbers(1000, 5000);
+printNumbers(5, 10);
