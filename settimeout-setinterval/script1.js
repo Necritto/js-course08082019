@@ -6,14 +6,13 @@ function printNumbers(from, to) {
 
   let currentFrom = from;
 
-  let timeout = setTimeout(function timer() {
-    console.log(currentFrom);
-    timeout = setTimeout(timer, 1000);
+  setTimeout(function timer() {
+    if(currentFrom <= to) {
+      console.log(currentFrom);
+      setTimeout(timer, 1000);
+    }
+    currentFrom++;
   }, 1000);
-  if (currentFrom < to) {
-    clearTimeout(timeout);
-  }
-  currentFrom++;
 }
 
 printNumbers(5, 10);
