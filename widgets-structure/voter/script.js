@@ -9,15 +9,17 @@ voter.setVote(1);
 function Voter(options) {
   let elem = options.elem;
 
-  function changeDown() {
-    let down = elem.querySelector('.down'),
-      vote = elem.querySelector('.vote');
+  let down = elem.querySelector('.down'),
+    up = elem.querySelector('.up'),
+    vote = elem.querySelector('.vote');
 
-    down.addEventListener('click', () => {
-      vote.data.innerHTML -= (vote.data - 1);
-    });
-  }
-  
+  down.addEventListener('click', () => {
+    vote.innerHTML -= vote.data;
+  });
+
+  up.addEventListener('click', () => {
+    vote.innerHTML += vote.data;
+  });
 
   function setVote(vote) {
     elem.querySelector('.vote').innerHTML = vote;
