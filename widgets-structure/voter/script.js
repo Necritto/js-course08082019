@@ -7,18 +7,20 @@ let voter = new Voter({
 voter.setVote(1);
 
 function Voter(options) {
-  let elem = options.elem;
+  const elem = options.elem;
 
   let down = elem.querySelector('.down'),
     up = elem.querySelector('.up'),
     vote = elem.querySelector('.vote');
 
   down.addEventListener('click', () => {
-    vote.innerHTML -= parseInt(vote.textContent);
+    let numDown = parseInt(vote.textContent);
+    vote.innerHTML = numDown - 1;
   });
 
   up.addEventListener('click', () => {
-    vote.innerHTML += parseInt(vote.textContent);
+    let numUp = parseInt(vote.textContent);
+    vote.innerHTML = numUp + 1;
   });
 
   function setVote(vote) {
