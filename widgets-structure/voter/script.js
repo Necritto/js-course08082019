@@ -14,13 +14,11 @@ function Voter(options) {
     vote = elem.querySelector('.vote');
 
   down.addEventListener('click', () => {
-    let numDown = parseInt(vote.textContent);
-    vote.innerHTML = numDown - 1;
+    vote.innerHTML = parseInt(vote.textContent) - 1;
   });
 
   up.addEventListener('click', () => {
-    let numUp = parseInt(vote.textContent);
-    vote.innerHTML = numUp + 1;
+    vote.innerHTML = parseInt(vote.textContent) + 1;
   });
 
   function setVote(vote) {
