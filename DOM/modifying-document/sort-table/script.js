@@ -1,0 +1,5 @@
+'use strict';
+
+table.tBodies[0].append(...[...table.rows]
+  .slice(1)
+  .sort((rowA, rowB) => rowA.cells[0].innerHTML > rowB.cells[0].innerHTML ? 1 : -1));
