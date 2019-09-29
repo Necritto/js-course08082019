@@ -1,0 +1,24 @@
+.galery {
+  width: 130px;
+  height: 130px;
+  margin: 20px auto;
+  text-align: center; 
+}
+
+.galery img {
+  display: none;
+}
+
+.galery ul {
+  padding: 0;
+  margin: 0;
+}
+
+.galery img:first-child {
+  display: block;
+}
+
+.buttons {
+  margin: 50px;
+  text-align: center;
+}
