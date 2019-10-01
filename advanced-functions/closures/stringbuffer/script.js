@@ -8,7 +8,7 @@ function makeBuffer() {
             return currentResult += value;
         }
         currentResult += value;
-    }
+    };
 }
 
 let buffer = makeBuffer();
