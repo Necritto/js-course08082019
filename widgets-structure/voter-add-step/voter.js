@@ -1,13 +1,13 @@
 'use strict';
 
 function Voter(options) {
-  let elem = this._elem = options.elem;
+  const elem = options.elem;
   this._voteElem = elem.querySelector('.vote');
 
-  elem.onclick = this._onClick.bind(this);
+  elem.addEventListener('click', this._click.bind(this));
 }
 
-Voter.prototype._onClick = function(event) {
+Voter.prototype._click = function(event) {
   if (event.target.closest('.down')) {
     this._voteDecrease();
   } else if (event.target.closest('.up')) {
@@ -15,14 +15,14 @@ Voter.prototype._onClick = function(event) {
   }
 };
 
-Voter.prototype._voteIncrease = function() {
-  this._voteElem.innerHTML = +this._voteElem.innerHTML + 1;
+Voter.prototype._voteDecrease = function () {
+  this.vote.innerHTML = parseInt(this.vote.textContent) - 1;
 };
 
-Voter.prototype._voteDecrease = function() {
-  this._voteElem.innerHTML = +this._voteElem.innerHTML - 1;
+Voter.prototype._voteIncrease = function () {
+  this.vote.innerHTML = parseInt(this.vote.textContent) + 1;
 };
 
-Voter.prototype.setVote = function(vote) {
-  this._voteElem.innerHTML = +vote;
+Voter.prototype.setVote = function (vote) {
+  this.elem.querySelector('.vote').textContent = +vote;
 };
