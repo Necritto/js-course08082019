@@ -14,7 +14,6 @@ function changeLargeImg(event) {
 }
 
 function showLargeImg(elem) {
-  largeImg.src = elem.src;
-  console.log(largeImg.src);
+  largeImg.src = elem.getAttribute('href');
   event.preventDefault();
 }

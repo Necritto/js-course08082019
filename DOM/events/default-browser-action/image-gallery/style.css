@@ -33,3 +33,12 @@ h2 em {
 #thumbs a:hover {
   border-color: #FF9900;
 }
+
+#thumbs li {
+  list-style: none;
+}
+
+#thumbs {
+  margin: 0;
+  padding: 0;
+}
